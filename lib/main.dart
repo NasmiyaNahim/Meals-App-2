@@ -1,9 +1,11 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:google_fonts/google_fonts.dart';
 
 import 'package:mealsapp22/screens/tabs.dart';
+import 'package:mealsapp22/providers/filters_provider.dart';
 
 
 final theme = ThemeData(
@@ -16,7 +18,11 @@ final theme = ThemeData(
 );
 
 void main() {
-  runApp(const App());
+  runApp(
+    ProviderScope( // Wrap MaterialApp with ProviderScope
+      child: const App(),
+    ),
+  );
 }
 
 class App extends StatelessWidget {
